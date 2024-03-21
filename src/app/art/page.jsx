@@ -1,5 +1,11 @@
-import React from 'react'
-import Art from './Art';
+"use client";
+import React, { useState , useContext} from "react";
+import Art from './Art'
+import Link from "next/link";
+import Image from "next/image";
+import { useCart } from "../cart/Cart";
+import Cart from "../cart/Carted";
+
 
 export const artworks = [
     {
@@ -7,7 +13,7 @@ export const artworks = [
       title: "Responsive Web Design",
       category: "Art Works",
       price: 300,
-      image: "/paint2.jpeg",
+      image: "/paint1.jpeg",
       description: [
         "Responsive web design is an approach to designing and coding websites that ensure optimal viewing and interaction experiences across various devices, from desktop computers to smartphones.",
         "It involves using flexible layouts, fluid grids, and media queries to adapt the design and content of a website based on the screen size and orientation of the device being used.",
@@ -21,7 +27,7 @@ export const artworks = [
       title: "CSS Animations",
       category: "Art Works",
       price: 250,
-      image: "/paint3.jpeg",
+      image: "/paint2.jpeg",
       description: [
         "CSS animations allow web developers to create dynamic and visually engaging effects on web pages without relying on JavaScript or external libraries.",
         "By using keyframes and animation properties such as animation-duration, animation-timing-function, and animation-delay, developers can control the timing and behavior of animations.",
@@ -35,7 +41,7 @@ export const artworks = [
       title: "JavaScript Canvas Drawings",
       category: "Art Works",
       price: 400,
-      image: "/paint4.jpeg",
+      image: "/paint3.jpeg",
       description: [
         "JavaScript canvas drawings allow developers to create interactive and visually stunning graphics directly within the browser.",
         "The HTML canvas element provides a drawing surface that can be manipulated using JavaScript to draw shapes, lines, text, and images.",
@@ -49,7 +55,7 @@ export const artworks = [
       title: "HTML Sculptures",
       category: "Art Works",
       price: 500,
-      image: "/paint5.jpeg",
+      image: "/paint4.jpeg",
       description: [
         "HTML sculptures are creative artworks crafted entirely using HTML markup and CSS styling techniques.",
         "Web developers use HTML elements, such as divs, spans, and SVGs, to construct intricate sculptures that mimic real-life objects, abstract shapes, or artistic designs.",
@@ -63,7 +69,7 @@ export const artworks = [
       title: "JavaScript Interactive Installations",
       category: "Art Works",
       price: 600,
-      image: "/paint6.jpeg",
+      image: "/paint5.jpeg",
       description: [
         "JavaScript interactive installations are immersive art experiences that utilize JavaScript programming to engage and interact with viewers in real-time.",
         "These installations often combine elements of visual art, sound, motion, and interactivity to create dynamic and memorable experiences.",
@@ -77,7 +83,7 @@ export const artworks = [
       title: "CSS Sculptural Typography",
       category: "Art Works",
       price: 450,
-      image: "/paint7.jpeg",
+      image: "/paint6.jpeg",
       description: [
         "CSS sculptural typography is a creative typography technique that uses CSS styling to transform text into three-dimensional sculptural forms.",
         "By applying CSS properties like text-shadow, transform, and perspective, web designers can manipulate the appearance of text to create visually striking typographic sculptures.",
@@ -91,7 +97,7 @@ export const artworks = [
       title: "JavaScript Generative Art",
       category: "Art Works",
       price: 550,
-      image: "/paint8.jpeg",
+      image: "/paint7.jpeg",
       description: [
         "JavaScript generative art is a form of algorithmic art that uses code to generate complex and visually intriguing images, animations, and patterns.",
         "By writing algorithms that manipulate shapes, colors, and textures, artists and developers can create unique and unpredictable artworks that evolve over time.",
@@ -105,7 +111,35 @@ export const artworks = [
       title: "HTML5 Video Installations",
       category: "Art Works",
       price: 700,
+      image: "/paint8.jpeg",
+      description: [
+        "HTML5 video installations are multimedia art experiences that leverage HTML5 video technology to create immersive and cinematic environments.",
+        "Artists and developers use HTML5 video elements, CSS styling, and JavaScript interactivity to craft interactive narratives, visual montages, and experimental films.",
+        "These installations often incorporate sound design, motion graphics, and interactive elements to engage viewers on multiple sensory levels.",
+        "HTML5 video installations challenge traditional notions of cinema and gallery art, offering new possibilities for storytelling and audience engagement in the digital age."
+      ],
+      tags: ["html5", "video", "installations", "multimedia", "cinematic"]
+    },
+    {
+      id: 9,
+      title: "Python Install",
+      category: "Art Works",
+      price: 125,
       image: "/paint9.jpeg",
+      description: [
+        "HTML5 video installations are multimedia art experiences that leverage HTML5 video technology to create immersive and cinematic environments.",
+        "Artists and developers use HTML5 video elements, CSS styling, and JavaScript interactivity to craft interactive narratives, visual montages, and experimental films.",
+        "These installations often incorporate sound design, motion graphics, and interactive elements to engage viewers on multiple sensory levels.",
+        "HTML5 video installations challenge traditional notions of cinema and gallery art, offering new possibilities for storytelling and audience engagement in the digital age."
+      ],
+      tags: ["html5", "video", "installations", "multimedia", "cinematic"]
+    },
+    {
+      id: 10,
+      title: "Rect js jons",
+      category: "Art Works",
+      price: 450,
+      image: "/paint10.jpeg",
       description: [
         "HTML5 video installations are multimedia art experiences that leverage HTML5 video technology to create immersive and cinematic environments.",
         "Artists and developers use HTML5 video elements, CSS styling, and JavaScript interactivity to craft interactive narratives, visual montages, and experimental films.",
@@ -116,8 +150,49 @@ export const artworks = [
     },
     // More artworks can be added here
   ];
-export default function page() {
+
+
+
+export default function Arts() {
+  const {cartItems, setCartItems } = useCart();
+  const {totalCart , setTotalCart} = useCart();
+  const {totalItem, setTotalItem} = useCart(0);
+  const {addToCart}  = useCart()
+
+
+
+  const fruitDisplay = artworks.map((works, index) => (
+    <section
+      key={index}
+      className="mx-auto my-auto border rounded-md w-80 mt-6 shadow-2xl bg-white  px-4 "
+    >
+      <Link href={`/art/${works.title.split(' ').join('-')}`}>
+        <Image src={`/paint${works.id}.jpeg`} alt={works.id} width={130} height={130} className="ml-32 "/>
+        <h2 className="text-[20px] uppercase mt-2 font-bold text-red-500">
+          {works.name}
+        </h2>
+        <p className="text-[13px]">{`${works.description[0]}`}</p>
+        <p className=" text-red-500  font-semibold">{`${"$" + works.price}`}</p>
+      </Link>
+      <button
+        className="w-[20] bg-red-400 border"
+        onClick={() => addToCart(works)}
+      >
+        Add to Cart
+      </button>
+    </section>
+  ));
+
   return (
-    <div><Art artworks={artworks}/></div>
-  )
+    <div>
+      <Art artworks={artworks}/>
+      <Cart/>
+      <p>TotalItem Price:&#8358;{Number(totalCart.toFixed(2))}</p>
+      <p>TotalItem Count:{totalItem}</p>
+      <div className="grid grid-cols-3  bg-[rgba(255,192,203,0.518)] ">
+      </div>
+    </div>
+  );
 }
+
+

@@ -6,9 +6,15 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from 'react';
 import { RxCross1 } from "react-icons/rx";
 import { FaShippingFast } from 'react-icons/fa';
+import { useCart } from '../cart/Cart';
 
 
 export default function Navbar() {
+    const {cartItems, setCartItems } = useCart();
+    const {totalCart , setTotalCart} = useCart();
+    const {totalItem, setTotalItem} = useCart(0);
+    const {addToCart}  = useCart()
+  
     const [cart, setCart] = useState(0)
     const [open, setOpen] = useState(true)
 
@@ -61,7 +67,7 @@ export default function Navbar() {
                             <span className=' flex w-7 h-8 justify-center items-center bg-gray-500 rounded-md text-xl'>
                             <RiShoppingBasketLine/> 
                             </span>
-                            <span className=' flex pr-12 justify-center items-center'>{cart}</span>
+                            <span className=' flex pr-12 justify-center items-center'>{totalItem}</span>
                         </Link>
                     </li>
                 </div>

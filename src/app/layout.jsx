@@ -2,6 +2,7 @@ import { Shadows_Into_Light } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { CartProvider } from './cart/Cart'
 
 
 const shadow = Shadows_Into_Light({ subsets: ['latin'], weight: ['400']})
@@ -14,6 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
+      <CartProvider>
       <body className={`   ${shadow.className}`} >
       <Navbar />
       
@@ -22,6 +24,7 @@ export default function RootLayout({ children }) {
       </div>
       <Footer />
       </body>
+      </CartProvider>
     </html>
   )
 }
