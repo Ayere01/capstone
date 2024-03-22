@@ -148,11 +148,120 @@ export const artworks = [
       ],
       tags: ["html5", "video", "installations", "multimedia", "cinematic"]
     },
-    // More artworks can be added here
+    {
+      id: 11,
+      title: "SVG Animations",
+      category: "Art Works",
+      price: 350,
+      image: "/paint11.jpeg",
+      description: [
+        "SVG animations utilize scalable vector graphics to create dynamic and interactive visual effects on web pages.",
+        "SVG (Scalable Vector Graphics) is a markup language for describing two-dimensional graphics in XML format.",
+        "By animating SVG elements using CSS or JavaScript, developers can achieve a wide range of effects, from simple transitions to complex morphing animations.",
+        "SVG animations are lightweight, scalable, and customizable, making them ideal for creating responsive and visually appealing web experiences."
+      ],
+      tags: ["svg", "animations", "scalable vector graphics", "css", "javascript"]
+    },
+    {
+      id: 12,
+      title: "React Component Art",
+      category: "Art Works",
+      price: 450,
+      image: "/paint12.jpeg",
+      description: [
+        "React component art involves creating visual artwork using React components and JSX syntax.",
+        "With React, developers can build reusable UI components that encapsulate specific functionality and visual styling.",
+        "By composing these components together, artists and developers can create intricate and interactive artworks that respond to user input and interactions.",
+        "React component art blurs the lines between web development and digital art, showcasing the creative possibilities of component-based architecture in the realm of visual design."
+      ],
+      tags: ["react", "jsx", "components", "ui", "interactive"]
+    },
+    {
+      id: 13,
+      title: "CSS Grid Layouts",
+      category: "Art Works",
+      price: 300,
+      image: "/paint13.jpeg",
+      description: [
+        "CSS grid layouts enable web developers to create complex and responsive layouts with ease.",
+        "The CSS Grid Layout Module introduces a two-dimensional grid system for laying out web pages, allowing for precise control over the placement and sizing of elements.",
+        "With CSS grid, developers can create magazine-style layouts, card-based designs, and even asymmetrical grids that adapt to different screen sizes and orientations.",
+        "CSS grid layouts offer a flexible and powerful alternative to traditional layout techniques, empowering designers to create visually stunning and functional web experiences."
+      ],
+      tags: ["css", "grid layouts", "responsive design", "layout", "web development"]
+    },
+    {
+      id: 14,
+      title: "Vue.js Interactive Art",
+      category: "Art Works",
+      price: 500,
+      image: "/paint14.jpeg",
+      description: [
+        "Vue.js interactive art combines the simplicity of Vue.js with the creativity of interactive art.",
+        "Vue.js is a progressive JavaScript framework for building user interfaces, known for its simplicity and flexibility.",
+        "By leveraging Vue.js components, directives, and reactivity system, artists and developers can create immersive and interactive art experiences that respond to user input and events.",
+        "Vue.js interactive art showcases the potential of modern web technologies for artistic expression, blending code and creativity in unique and captivating ways."
+      ],
+      tags: ["vue.js", "interactive art", "vue components", "reactivity", "user interface"]
+    },
+    {
+      id: 15,
+      title: "WebGL Visualizations",
+      category: "Art Works",
+      price: 600,
+      image: "/paint15.jpeg",
+      description: [
+        "WebGL (Web Graphics Library) enables high-performance 3D graphics rendering in web browsers.",
+        "With WebGL, developers can create immersive visualizations, games, and simulations that harness the full power of the GPU.",
+        "Using JavaScript and WebGL APIs, artists and developers can render complex scenes, apply shaders and effects, and create interactive experiences that push the boundaries of web graphics.",
+        "WebGL visualizations offer a new dimension of creativity and interactivity, unlocking unprecedented possibilities for digital art and visual storytelling on the web."
+      ],
+      tags: ["webgl", "3d graphics", "visualizations", "javascript", "gpu rendering"]
+    },
+    {
+      id: 16,
+      title: "Bootstrap UI Designs",
+      category: "Art Works",
+      price: 350,
+      image: "/paint16.jpeg",
+      description: [
+        "Bootstrap UI designs leverage the power of the Bootstrap framework to create sleek and responsive user interfaces.",
+        "Bootstrap is a popular front-end framework for building responsive and mobile-first websites and web applications.",
+        "By using Bootstrap's pre-designed components, grid system, and utilities, developers can rapidly prototype and design modern user interfaces with consistency and efficiency.",
+        "Bootstrap UI designs offer a robust foundation for creating visually appealing and user-friendly web experiences, streamlining the UI design and development process."
+      ],
+      tags: ["bootstrap", "ui designs", "responsive design", "front-end", "web development"]
+    },
+    {
+      id: 17,
+      title: "Node.js Artistic Experiments",
+      category: "Art Works",
+      price: 400,
+      image: "/paint17.jpeg",
+      description: [
+        "Node.js artistic experiments explore the intersection of code and creativity using the Node.js runtime environment.",
+        "Node.js is a server-side JavaScript runtime known for its asynchronous and event-driven architecture.",
+        "With Node.js, artists and developers can create generative art, procedural animations, and interactive experiences that run server-side.",
+        "Node.js artistic experiments showcase the versatility of JavaScript as a creative tool, blurring the boundaries between server-side programming and digital art."
+      ],
+      tags: ["node.js", "artistic experiments", "generative art", "procedural animations", "server-side"]
+    },
+    {
+      id: 18,
+      title: "D3.js Data Visualizations",
+      category: "Art Works",
+      price: 550,
+      image: "/paint18.jpeg",
+      description: [
+        "D3.js (Data-Driven Documents) is a JavaScript library for creating dynamic and interactive data visualizations in web browsers.",
+        "With D3.js, developers can bind data to DOM elements, apply data-driven transformations, and create complex visualizations with ease.",
+        "From simple charts and graphs to immersive data narratives, D3.js empowers artists and developers to explore, analyze, and communicate data in compelling and creative ways.",
+        "D3.js data visualizations combine the art of design with the science of data, offering insights and stories that captivate and inform audiences."
+      ],
+      tags: ["d3.js", "data visualizations", "javascript", "charts", "graphs"]
+    }
   ];
-
-
-
+  
 export default function Arts() {
   const {cartItems, setCartItems } = useCart();
   const {totalCart , setTotalCart} = useCart();

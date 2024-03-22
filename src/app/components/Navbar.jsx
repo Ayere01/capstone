@@ -50,7 +50,7 @@ export default function Navbar() {
             </ul>
             <ul className={`md:flex ${open ? 'hidden' : 'flex flex-col' }justify-center gap-6`}>
             <li>
-                <Link href="/newin">New In</Link>
+                <Link href="/login">Log In</Link>
                 </li>
                 <li>
                 <Link href="/art">Art</Link>

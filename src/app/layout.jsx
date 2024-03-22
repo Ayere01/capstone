@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <CartProvider>
-      <body className={`   ${shadow.className}`} >
+      <body>
       <Navbar />
       
       <div className=' relative pt-36'>
